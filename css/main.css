@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+html {
+  font-size: calc(0.75vw + 0.75vh);
+}
+
+body {
+  background: linear-gradient(45deg, #57003f 0%, #f57453 100%);
+  font-family: "Ubuntu";
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.terminal {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  width: 85vw;
+  background: chartreuse;
+}
+
+/* TITLE BAR STYLES */
+.titleBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 1.25rem;
+  background: linear-gradient(#504b45 0%, #3c3b37 100%);
+}
+
+#titleBarText {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: #d5d0ce;
+}
+
+.titleBarIconButton {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  border-radius: 100%;
+  background: linear-gradient(#7d7871 0%, #595953 100%);
+}
+
+#closeButton {
+  margin-left: 0.5rem;
+  background: linear-gradient(#f37458 0%, #de4c12 100%);
+}
+
+/* CLI Styles */
+.cli {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(56, 4, 40, 0.9);
+}

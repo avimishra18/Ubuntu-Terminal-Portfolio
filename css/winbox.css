@@ -1,0 +1,49 @@
+.winbox {
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: "Ubuntu Mono", monospace;
+  background: transparent;
+}
+
+/* TitleBar Styles */
+.wb-header {
+  display: flex;
+  background: linear-gradient(#504b45 0%, #3c3b37 100%);
+}
+
+.wb-title {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+/* TitleBar Icon Styles */
+.wb-icon {
+  transform: rotateY(180deg);
+}
+
+.wb-full {
+  display: none;
+}
+
+.wb-min {
+  background-image: url(../assets/minimize_circle.svg);
+  background-position: center;
+  background-size: 0.9rem auto;
+}
+
+.wb-max {
+  background-image: url(../assets/maximize_circle.svg);
+  background-position: center;
+  background-size: 0.9rem auto;
+}
+.wb-close {
+  background-image: url(../assets/close_circle.svg);
+  background-position: center;
+  background-size: 0.9rem auto;
+  border-radius: 100%;
+}
+
+/* CLI Styles */
+.wb-body {
+  background: rgba(56, 4, 40, 0.85);
+}
