@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
-@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 html {
   font-size: calc(0.75vw + 0.75vh);
@@ -7,7 +7,11 @@ html {
 
 body {
   background: linear-gradient(45deg, #57003f 0%, #f57453 100%);
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu Mono', monospace;
+  margin: 0;
+}
+
+p {
   margin: 0;
 }
 
@@ -20,48 +24,69 @@ body {
   box-sizing: border-box;
 }
 
-.terminal {
-  display: flex;
-  flex-direction: column;
-  height: 75vh;
-  width: 85vw;
-  background: chartreuse;
-}
-
-/* TITLE BAR STYLES */
-.titleBar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  height: 1.25rem;
-  background: linear-gradient(#504b45 0%, #3c3b37 100%);
-}
-
-#titleBarText {
-  margin-left: 0.5rem;
-  font-size: 0.75rem;
-  color: #d5d0ce;
-}
-
-.titleBarIconButton {
-  width: 0.75rem;
-  height: 0.75rem;
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
-  border-radius: 100%;
-  background: linear-gradient(#7d7871 0%, #595953 100%);
-}
-
-#closeButton {
-  margin-left: 0.5rem;
-  background: linear-gradient(#f37458 0%, #de4c12 100%);
-}
-
 /* CLI Styles */
-.cli {
+.cli-root {
   width: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   background: rgba(56, 4, 40, 0.9);
+  padding: 2rem;
+}
+
+.commandBox {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  padding-top: 0.2rem;
+  padding-left: 0.2rem;
+  padding-bottom: 0.4rem;
+  color: #dddddd;
+  margin: 0;
+}
+
+input {
+  font-size: 0.75rem;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.terminalInput {
+  flex-grow: 1;
+  color: #dddddd;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.commandArgument {
+  color: #ddddddcc;
+}
+
+.promptUser {
+  color: #87d441;
+}
+.promptLocation {
+  color: #6d85a9;
+}
+.promptDollar {
+  color: #dddddd;
+}
+.promptCursor {
+  height: 17px;
+  width: 8px;
+  background: white;
+  display: block;
+  margin-left: 8px;
+  animation: 2000ms ease infinite alternate blink;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
