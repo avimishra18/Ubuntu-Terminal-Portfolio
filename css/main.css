@@ -13,6 +13,12 @@ body {
 
 p {
   margin: 0;
+  color: #dddddd;
+}
+
+a {
+  text-decoration: none;
+  color: #dddddd;
 }
 
 .container {
@@ -22,6 +28,10 @@ p {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+}
+
+.textHighlight {
+  color: #ddddddcc;
 }
 
 /* CLI Styles */
@@ -41,7 +51,6 @@ p {
   padding-top: 0.2rem;
   padding-left: 0.2rem;
   padding-bottom: 0.4rem;
-  color: #dddddd;
   margin: 0;
 }
 
@@ -73,13 +82,10 @@ input {
 .promptDollar {
   color: #dddddd;
 }
+
+/* TODO: Add cursor effect. */
 .promptCursor {
-  height: 17px;
-  width: 8px;
-  background: white;
-  display: block;
-  margin-left: 8px;
-  animation: 2000ms ease infinite alternate blink;
+  animation: 5000ms ease infinite alternate blink;
 }
 
 @keyframes blink {

@@ -31,16 +31,29 @@
   background-size: 0.9rem auto;
 }
 
+.wb-min:hover {
+  opacity: 0.85;
+}
+
 .wb-max {
   background-image: url(../assets/maximize_circle.svg);
   background-position: center;
   background-size: 0.9rem auto;
 }
+
+.wb-max:hover {
+  opacity: 0.85;
+}
+
 .wb-close {
   background-image: url(../assets/close_circle.svg);
   background-position: center;
   background-size: 0.9rem auto;
   border-radius: 100%;
+}
+
+.wb-close:hover {
+  opacity: 0.85;
 }
 
 /* CLI Styles */
