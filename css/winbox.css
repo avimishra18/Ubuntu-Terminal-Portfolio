@@ -60,3 +60,17 @@
 .wb-body {
   background: rgba(56, 4, 40, 0.85);
 }
+
+.wb-body::-webkit-scrollbar {
+  width: 0.35rem;
+  height: 0.35rem;
+  background: transparent;
+}
+
+.wb-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(#de4c12cc 0%, #de4c12ff 100%);
+}
+
+.wb-body::-webkit-scrollbar-corner {
+  display: none;
+}
