@@ -7,17 +7,25 @@
 /* TitleBar Styles */
 .wb-header {
   display: flex;
+  height: 2rem;
   background: linear-gradient(#504b45 0%, #3c3b37 100%);
 }
 
 .wb-title {
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 1rem;
+  padding-left: 0.6rem;
+  height: 2rem;
+  line-height: 2rem;
   flex-grow: 1;
+  font-size: 1.15rem;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 /* TitleBar Icon Styles */
+.wb-icon * {
+  width: 1.5rem;
+}
 .wb-icon {
+  height: 2rem;
   transform: rotateY(180deg);
 }
 
@@ -58,12 +66,14 @@
 
 /* CLI Styles */
 .wb-body {
+  top: 2rem;
   background: rgba(56, 4, 40, 0.85);
 }
 
 .wb-body::-webkit-scrollbar {
   width: 0.35rem;
   height: 0.35rem;
+  padding: 1rem;
   background: transparent;
 }
 

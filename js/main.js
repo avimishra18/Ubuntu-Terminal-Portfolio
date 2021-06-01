@@ -9,6 +9,7 @@ const newCommandUI = (isHelpCommand) => {
   commandBox.classList.add('commandBox');
 
   const paragraph = document.createElement('p');
+  paragraph.classList.add('commandLine');
 
   const promptUser = document.createElement('span');
   promptUser.classList.add('promptUser');
@@ -32,20 +33,23 @@ const newCommandUI = (isHelpCommand) => {
     commandArgument.classList.add('commandArgument');
     commandArgument.innerHTML = '&nbsp;--help';
     paragraph.append(commandArgument);
+    commandBox.append(paragraph);
+    cliRoot.append(commandBox);
+    terminalInput.focus();
   } else {
     terminalInput.classList.add('terminalInput');
     terminalInput.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
         event.target.disabled = true;
         handleCommand(event.target.value);
-        newCommandUI();
+        newCommandUI(false);
       }
     });
     paragraph.append(terminalInput);
+    commandBox.append(paragraph);
+    cliRoot.append(commandBox);
+    terminalInput.focus();
   }
-  commandBox.append(paragraph);
-  cliRoot.append(commandBox);
-  terminalInput.focus();
 };
 
 const responseUI = (textContent) => {
@@ -67,13 +71,15 @@ const helpCommandUI = () => {
 
 newCommandUI(true);
 helpCommandUI();
-newCommandUI();
+newCommandUI(false);
 
 const terminalBox = new WinBox({
   title: 'guest@ubuntu',
   mount: document.getElementById('cli-root'),
   x: 'center',
   y: 'center',
+  width: '85%',
+  height: '80%',
 });
 
 const handleCommand = (command) => {
