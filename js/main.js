@@ -82,6 +82,11 @@ const terminalBox = new WinBox({
   height: '80%',
 });
 
+window.addEventListener('resize', windowResize);
+function windowResize(e) {
+  terminalBox.resize('85%', '80%').move('center', 'center');
+}
+
 const handleCommand = (command) => {
   switch (command.toLowerCase()) {
     case WGET_RESUME:
