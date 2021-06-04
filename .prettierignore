@@ -1,0 +1,5 @@
+# Ignoring Library Folder
+lib
+
+# Ignoring the Markdown files
+*.md
