@@ -1,5 +1,21 @@
 const cliRoot = document.getElementById('cli-root');
 
+// This creates the Terminal (Dialog Box)
+const terminalBox = new WinBox({
+  title: 'guest@ubuntu',
+  mount: document.getElementById('cli-root'),
+  x: 'center',
+  y: 'center',
+  width: '85%',
+  height: '80%',
+});
+
+window.addEventListener('resize', windowResize);
+function windowResize() {
+  terminalBox.resize('85%', '80%').move('center', 'center');
+}
+
+// Generates the UI for a new command
 const newCommandUI = (isHelpCommand) => {
   if (isHelpCommand === undefined) {
     isHelpCommand = false;
@@ -52,7 +68,8 @@ const newCommandUI = (isHelpCommand) => {
   }
 };
 
-const responseUI = (textContent) => {
+// Populates UI in response to a command
+const commandResponseUI = (textContent) => {
   const responseBox = document.createElement('div');
   responseBox.classList.add('commandBox');
   const paragraph = document.createElement('p');
@@ -61,7 +78,8 @@ const responseUI = (textContent) => {
   cliRoot.append(responseBox);
 };
 
-const helpCommandUI = () => {
+// The UI to show when user enters 'commands --help'
+const commandHelpUI = () => {
   const commandBox = document.createElement('div');
   commandBox.classList.add('commandBox');
   commandBox.innerHTML =
@@ -69,35 +87,18 @@ const helpCommandUI = () => {
   cliRoot.append(commandBox);
 };
 
-newCommandUI(true);
-helpCommandUI();
-newCommandUI(false);
-
-const terminalBox = new WinBox({
-  title: 'guest@ubuntu',
-  mount: document.getElementById('cli-root'),
-  x: 'center',
-  y: 'center',
-  width: '85%',
-  height: '80%',
-});
-
-window.addEventListener('resize', windowResize);
-function windowResize(e) {
-  terminalBox.resize('85%', '80%').move('center', 'center');
-}
-
+// Switch Case to handle the commands entered in terminal
 const handleCommand = (command) => {
   switch (command.toLowerCase()) {
     case WGET_RESUME:
       window.open(RESUME_URL, '_blank');
       break;
     case LS_PROJECTS: {
-      responseUI(PROJECTS);
+      commandResponseUI(PROJECTS);
       break;
     }
     case LS_SKILLS: {
-      responseUI(SKILLS);
+      commandResponseUI(SKILLS);
       break;
     }
     case EXIT:
@@ -105,10 +106,15 @@ const handleCommand = (command) => {
       break;
     case HELP:
     case COMMANDS_HELP:
-      helpCommandUI();
+      commandHelpUI();
       break;
     default:
-      responseUI(`No command '${command}' found.`);
+      commandResponseUI(`No command '${command}' found.`);
       break;
   }
 };
+
+// Showcasing the UI help command in first launch
+newCommandUI(true);
+commandHelpUI();
+newCommandUI(false);
