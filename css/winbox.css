@@ -34,7 +34,7 @@
 }
 
 .wb-min {
-  background-image: url(../assets/minimize_circle.svg);
+  background-image: url(../assets/minimize_icon.svg);
   background-position: center;
   background-size: 0.9rem auto;
 }
@@ -44,7 +44,7 @@
 }
 
 .wb-max {
-  background-image: url(../assets/maximize_circle.svg);
+  background-image: url(../assets/maximize_icon.svg);
   background-position: center;
   background-size: 0.9rem auto;
 }
@@ -54,7 +54,7 @@
 }
 
 .wb-close {
-  background-image: url(../assets/close_circle.svg);
+  background-image: url(../assets/close_icon.svg);
   background-position: center;
   background-size: 0.9rem auto;
   border-radius: 100%;
