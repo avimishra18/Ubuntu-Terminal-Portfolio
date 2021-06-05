@@ -83,7 +83,7 @@ const commandHelpUI = () => {
   const commandBox = document.createElement('div');
   commandBox.classList.add('commandBox');
   commandBox.innerHTML =
-    '<p>&nbsp;&nbsp;&nbsp;├ wget resume</p><p>&nbsp;&nbsp;&nbsp;├ ls projects</p><p>&nbsp;&nbsp;&nbsp;├ ls skills</p><p>&nbsp;&nbsp;&nbsp;├ exit</p>';
+    '<p>&nbsp;&nbsp;&nbsp;├ wget resume</p><p>&nbsp;&nbsp;&nbsp;├ ls projects</p><p>&nbsp;&nbsp;&nbsp;├ ls skills</p><p>&nbsp;&nbsp;&nbsp;├ echo</p><p>&nbsp;&nbsp;&nbsp;├ exit</p>';
   cliRoot.append(commandBox);
 };
 
@@ -109,6 +109,11 @@ const handleCommand = (command) => {
       commandHelpUI();
       break;
     default:
+      // For ECHO command
+      if (command.split(' ')[0].toLowerCase() === ECHO) {
+        commandResponseUI(command.substring(5));
+        break;
+      }
       commandResponseUI(`No command '${command}' found.`);
       break;
   }
