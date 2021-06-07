@@ -16,11 +16,7 @@ function windowResize() {
 }
 
 // Generates the UI for a new command
-const newCommandUI = (isHelpCommand) => {
-  if (isHelpCommand === undefined) {
-    isHelpCommand = false;
-  }
-
+const newCommandUI = (isHelpCommand = false) => {
   const commandBox = document.createElement('div');
   commandBox.classList.add('commandBox');
 
@@ -78,6 +74,23 @@ const commandResponseUI = (textContent) => {
   cliRoot.append(responseBox);
 };
 
+// Populates UI for the ls projects command
+const commandProjectsUI = (projects) => {
+  const responseBox = document.createElement('div');
+  responseBox.classList.add('commandBox');
+  const paragraph = document.createElement('p');
+
+  let textContent = '';
+  Object.entries(projects).forEach(([key, value]) => {
+    textContent = textContent.concat(`${key}:&nbsp;${value}<br/><br/>`);
+    console.log(textContent);
+  });
+
+  paragraph.innerHTML = textContent;
+  responseBox.append(paragraph);
+  cliRoot.append(responseBox);
+};
+
 // The UI to show when user enters 'commands --help'
 const commandHelpUI = () => {
   const commandBox = document.createElement('div');
@@ -94,7 +107,7 @@ const handleCommand = (command) => {
       window.open(RESUME_URL, '_blank');
       break;
     case LS_PROJECTS: {
-      commandResponseUI(PROJECTS);
+      commandProjectsUI(PROJECTS);
       break;
     }
     case LS_SKILLS: {
